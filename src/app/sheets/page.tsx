@@ -43,33 +43,51 @@ const Sheets = () => {
       user_id: user.data.user.id,
     });
 
-    console.log("Res", res);
-
     router.push(`/sheets/${sheetId}`);
   };
 
   return (
     <div className="p-4">
-      <div className="flex justify-between">
-        <h1 className="text-3xl font-bold">Sheets</h1>
-        <button
-          className="p-2 bg-gray-700 rounded-lg text-white"
-          onClick={handleCreate}
-        >
-          + Create New
-        </button>
+      <div className="flex justify-center w-full ">
+        <div className="flex justify-center flex-col items-center gap-4">
+          <h1 className="text-3xl font-bold">
+            SocialCalc - Modern Way to Spreadsheet
+          </h1>
+          <p>New Way To Visualise Your Data</p>
+
+          <button
+            className="p-2 bg-gray-700 rounded-lg text-white"
+            onClick={handleCreate}
+          >
+            + Create New
+          </button>
+        </div>
       </div>
       <ul className="mt-4">
         {sheets.map((sheet, idx) => (
-          <li key={sheet.id} className="mb-2 flex gap-2">
-            <span className="text-gray-500">•</span>
-            <a
-              href={`/sheets/${sheet.id}`}
-              className="text-blue-500 hover:underline"
-            >
-              {`Sheet ${idx + 1}`}
-            </a>
-          </li>
+          <div key={idx} className="py-2 border-b-2 border-gray-950">
+            <li key={sheet.id} className="mb-2 flex gap-2 items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                />
+              </svg>
+
+              <a
+                href={`/sheets/${sheet.id}`}
+                className="text-blue-100 hover:underline font-bold text-lg"
+              >
+                {`Workbook ${idx + 1}`}
+              </a>
+            </li>
+          </div>
         ))}
       </ul>
     </div>
