@@ -18,8 +18,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-gray-500 text-white  mx-auto">
-        {children}
         <Chatbot />
+        {children}
       </body>
     </html>
   );

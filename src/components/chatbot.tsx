@@ -61,7 +61,7 @@ const Chatbot: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-0 right-5 w-96 flex flex-col items-end text-gray-800">
+    <div className="fixed bottom-0 right-5 w-96 flex flex-col items-end text-gray-800 z-[100]">
       <div
         className={`bg-gradient-to-r from-blue-400 to-blue-600 text-white p-4 rounded-t-3xl cursor-pointer font-bold text-center shadow-lg transition-colors duration-300 hover:from-pink-500 hover:to-red-500`}
         onClick={() => setIsOpen(!isOpen)}

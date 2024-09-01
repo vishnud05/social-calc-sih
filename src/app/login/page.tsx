@@ -10,7 +10,7 @@ export default function LoginPage() {
           name="email"
           type="email"
           required
-          className="border"
+          className="border text-gray-900"
         />
         <label htmlFor="password">Password:</label>
         <input
@@ -18,7 +18,7 @@ export default function LoginPage() {
           name="password"
           type="password"
           required
-          className="border"
+          className="border  text-gray-900"
         />
         <button
           formAction={login}
