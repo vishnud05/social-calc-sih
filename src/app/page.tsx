@@ -2,10 +2,13 @@
 import { createClient } from "@/lib/supabase-client";
 import { revalidatePath } from "next/cache";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { logout } from "./actions";
 
 export default function Home() {
   const supabase = createClient();
+  const router = useRouter();
   const [user, setUser] = useState<any>();
   useEffect(() => {
     const fetchUser = async () => {
@@ -25,8 +28,7 @@ export default function Home() {
           <>
             <button
               onClick={async () => {
-                await supabase.auth.signOut();
-                revalidatePath("/", "layout");
+                await logout();
               }}
               className="p-2 bg-red-700 rounded-lg text-white text-sm"
             >
